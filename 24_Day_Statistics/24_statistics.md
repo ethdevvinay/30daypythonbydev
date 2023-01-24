@@ -21,6 +21,47 @@
   - [Data](#data)
   - [Statistics Module](#statistics-module)
 - [NumPy](#numpy)
+  - [Importing NumPy](#importing-numpy)
+  - [Creating numpy array using](#creating-numpy-array-using)
+    - [Creating int numpy arrays](#creating-int-numpy-arrays)
+    - [Creating float numpy arrays](#creating-float-numpy-arrays)
+    - [Creating boolean numpy arrays](#creating-boolean-numpy-arrays)
+    - [Creating multidimensional array using numpy](#creating-multidimensional-array-using-numpy)
+    - [Converting numpy array to list](#converting-numpy-array-to-list)
+    - [Creating numpy array from tuple](#creating-numpy-array-from-tuple)
+    - [Shape of numpy array](#shape-of-numpy-array)
+    - [Data type of numpy array](#data-type-of-numpy-array)
+    - [Size of a numpy array](#size-of-a-numpy-array)
+  - [Mathematical Operation using numpy](#mathematical-operation-using-numpy)
+    - [Addition](#addition)
+    - [Subtraction](#subtraction)
+    - [Multiplication](#multiplication)
+    - [Division](#division)
+    - [Modulus](#modulus)
+    - [Floor Division](#floor-division)
+    - [Exponential](#exponential)
+  - [Checking data types](#checking-data-types)
+    - [Converting types](#converting-types)
+  - [Multi-dimensional Arrays](#multi-dimensional-arrays)
+    - [Getting items from a numpy array](#getting-items-from-a-numpy-array)
+  - [Slicing Numpy array](#slicing-numpy-array)
+    - [How to reverse the rows and the whole array?](#how-to-reverse-the-rows-and-the-whole-array)
+    - [Reverse the row and column positions](#reverse-the-row-and-column-positions)
+  - [How to represent missing values ?](#how-to-represent-missing-values-)
+      - [Generating Random Numbers](#generating-random-numbers)
+    - [Generationg random numbers](#generationg-random-numbers)
+  - [Numpy and Statistics](#numpy-and-statistics)
+    - [Matrix in numpy](#matrix-in-numpy)
+    - [Numpy numpy.arange()](#numpy-numpyarange)
+      - [What is Arrange?](#what-is-arrange)
+    - [Creating sequence of numbers using linspace](#creating-sequence-of-numbers-using-linspace)
+    - [NumPy Statistical Functions with Example](#numpy-statistical-functions-with-example)
+    - [How to create repeating sequences?](#how-to-create-repeating-sequences)
+    - [How to generate random numbers?](#how-to-generate-random-numbers)
+    - [Linear Algebra](#linear-algebra)
+    - [NumPy Matrix Multiplication with np.matmul()](#numpy-matrix-multiplication-with-npmatmul)
+- [Summery](#summery)
+  - [💻 Exercises: Day 24](#-exercises-day-24)
 
 # 📘 Day 24
 
@@ -28,29 +69,29 @@
 
 ## Statistics
 
-Statistics is the discipline that studies the _collection_, _organization_, _displaying_, _analysing_, _interpretation_ and _presentation_ of data.
-Statistics is a branch of Mathematics that is recommended to be a prerequisite for data science and machine learning. Statistics is a very broad field but we will focus in this section only on the most relevant part.
-After completing this challenge, you may go onto the web development, data analysis, machine learning and data science path. Whatever path you may follow, at some point in your career you will get data which you may work on. Having some statistical knowledge will help you to make decisions based on data, _data tells as they say_.
+Statistics is the discipline that studies the _collection_, _organization_, _displaying_, _analysis_, _interpretation_ and _presentation_ of data.
+Statistics is a branch of mathematics that is recommended to be a prerequisite for data science and machine learning. Statistics is a very broad field but we will focus in this section only on the most relevant part.
+After completing this challenge, you may go to web development, data analysis, machine learning and data science path. Whatever path you may follow, at some point in your career you will get data which you may work on. Having some statistical knowledge will help you to make decision based on data, _data tells as they say_.
 
 ## Data
 
-What is data? Data is any set of characters that is gathered and translated for some purpose, usually analysis. It can be any character, including text and numbers, pictures, sound, or video. If data is not put in a context, it doesn't make any sense to a human or computer. To make sense from data we need to work on the data using different tools.
+What is data? Data is any set of characters that is gathered and translated for some purpose, usually analysis. It can be any character, including text and numbers, pictures, sound, or video. If data is not put into context, it doesn't give any sense to a human or computer. To make sense from data we need to work on the data using different tools.
 
-The work flow of data analysis, data science or machine learning starts from data. Data can be provided from some data source or it can be created. There are structured and unstructured data.
+The work flow of data analysis, data science or machine learning starts from data. Data can be provided from some data source or it can be created. There are structured and and unstructure data.
 
-Data can be found in small or big format. Most of the data types we will get have been covered in the file handling section.
+Data can be found as small or big data format. Most of the data types we will get have been covered in the file handling section.
 
 ## Statistics Module
 
-The Python _statistics_ module provides functions for calculating mathematical statistics of numerical data. The module is not intended to be a competitor to third-party libraries such as NumPy, SciPy, or proprietary full-featured statistics packages aimed at professional statisticians such as Minitab, SAS and Matlab. It is aimed at the level of graphing and scientific calculators.
+The python _statistics_ module provides functions for calculating mathematical statistics of numeric data. The module is not intended to be a competitor to third-party libraries such as NumPy, SciPy, or proprietary full-featured statistics packages aimed at professional statisticians such as Minitab, SAS and Matlab. It is aimed at the level of graphing and scientific calculators.
 
 # NumPy
 
-In the first section we defined Python as a great general-purpose programming language on its own, but with the help of other popular libraries as(numpy, scipy, matplotlib, pandas etc) it becomes a powerful environment for scientific computing.
+In the first section we defined python as a great general-purpose programming language on its own, but with the help of other popular libraries (numpy, scipy, matplotlib, pandas etc) it becomes a powerful environment for scientific computing.
 
-NumPy is the core library for scientific computing in Python. It provides a high-performance multidimensional array object, and tools for working with arrays.
+Numpy is the core library for scientific computing in Python. It provides a high-performance multidimensional array object, and tools for working with arrays.
 
-So far, we have been using vscode but from now on I would recommend using Jupyter Notebook. To access jupyter notebook let's install [anaconda](https://www.anaconda.com/). If you are using anaconda most of the common packages are included and you don't have install packages if you installed anaconda.
+So far, we have been using vscode but from now on I would recommend using Jupyter Notebook. To access jupter notebook let's install [anaconda](https://www.anaconda.com/). If you are using anaconda most of the common packages are included and you don't have install packages if you installed anaconda.
 
 ```sh
 Vinay Grover@Vinay Grover:~/Desktop/30DaysOfPython$ pip install numpy
@@ -232,7 +273,7 @@ print('The size:', two_dimensional_list.size)  # 3
 
 ## Mathematical Operation using numpy
 
-NumPy array is not like exactly like python list. To do mathematical operation in Python list we have to loop through the items but numpy can allow to do any mathematical operation without looping.
+Numpy array is not like exactly like python list. To do mathematical operation in pyhton list we have to loop through the items but numpy can allow to do any mathematical operation without looping.
 Mathematical Operation:
 
 - Addition (+)
@@ -1086,7 +1127,7 @@ plt.hist(np_normal_dis, color="grey", bins=21)
 plt.show()
 ```
 
-![png](../test_files/test_121_0.png)
+![png](test_files/test_121_0.png)
 
 ```python
 # numpy.dot(): Dot Product in Python using Numpy
@@ -1180,7 +1221,7 @@ np_arr + 2
 
 array([ 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12])
 
-We use linear equation for quantities which have linear relationship. Let's see the example below:
+We use linear equation for quatities which have linear relationship. Let's see the example below:
 
 ```python
 temp = np.array([1,2,3,4,5])
@@ -1199,7 +1240,7 @@ plt.xticks(np.arange(0, 6, step=0.5))
 plt.show()
 ```
 
-![png](../test_files/test_141_0.png)
+![png](test_files/test_141_0.png)
 
 To draw the Gaussian normal distribution using numpy. As you can see below, the numpy can generate random numbers. To create random sample, we need the mean(mu), sigma(standard deviation), mumber of data points.
 
@@ -1214,13 +1255,13 @@ ax.set(xlabel="x", ylabel='y')
 plt.show()
 ```
 
-![png](../test_files/test_143_0.png)
+![png](test_files/test_143_0.png)
 
 # Summery
 
-To summarize, the main differences with python lists are:
+To summarise, the main differences with python lists are:
 
-1. Arrays support vectorized operations, while lists don’t.
+1. Arrays support vectorised operations, while lists don’t.
 1. Once an array is created, you cannot change its size. You will have to create a new array or overwrite the existing one.
 1. Every array has one and only one dtype. All items in it should be of that dtype.
 1. An equivalent numpy array occupies much less space than a python list of lists.
@@ -1229,7 +1270,5 @@ To summarize, the main differences with python lists are:
 ## 💻 Exercises: Day 24
 
 1. Repeat all the examples
-
-🎉 CONGRATULATIONS ! 🎉
 
 [<< Day 23](../23_Day_Virtual_environment/23_virtual_environment.md) | [Day 25 >>](../25_Day_Pandas/25_pandas.md)
